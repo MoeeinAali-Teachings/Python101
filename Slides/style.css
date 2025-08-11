@@ -136,6 +136,12 @@ img[alt~="center"] {
   margin: 0 auto;
 }
 
+img[alt~="small"]{
+  height: 450px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 /* || SECTION CLASS: title */
 /* title page - only to be used as for a single slide */
 /* <!-- _class: title --> */
