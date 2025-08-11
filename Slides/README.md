@@ -654,3 +654,97 @@ num3 , num4 = map(float , input().split())
 
 - اگه ورودی‌ها عدد نباشن کد خطا میده!
 - اگه به جای چند تا متغیر، یدونه متغیر قرار بدیم،‌همه ورودی‌ها در قالب یک **لیست** ذخیره می‌شن. در فصل‌های بعد با لیست و کاربردهای اون آشنا می‌شیم...
+
+---
+
+<!-- _class: title -->
+
+# Operators | عملگر‌ها
+
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+# عملگرهای محاسباتی
+
+![center2](image.png)
+
+---
+
+# عملگرهای انتسابی
+
+![center2](assignment-operator-in-python.png)
+
+---
+
+# عملگرهای مقایسه‌ای
+
+![center2](image-1.png)
+
+---
+
+# عملگرهای منطقی
+
+![center](logical-operators.png)
+
+---
+
+# عملگرهای منطقی
+
+![center2](nl0W8.jpg)
+
+---
+
+# عملگرهای هویت
+
+![center](identity-operators.png)
+
+---
+
+# عملگرهای هویت
+
+#### مثال:
+
+```python
+a = True 
+
+print(a is True) # True
+print(a is not False) # False
+```
+
+---
+
+# عملگرهای عضویت
+
+
+![center](membership-operators.png)
+
+
+---
+
+# عملگرهای عضویت
+
+
+```python
+good_numbers = [1,2,3,4]
+
+print(1 in good_numbers) # True
+
+print(5 not in good_numbers) # True
+
+print(5 in good_numbers) # False
+
+```
+
+---
+
+# عملگرهای بیتی (معرفی)
+
+![center2](Bitwise-Operators-in-Python.webp)
+
+---
+

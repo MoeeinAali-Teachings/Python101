@@ -136,6 +136,16 @@ img[alt~="center"] {
   margin: 0 auto;
 }
 
+img[alt~="center2"] {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -45%);
+  height: 500px;
+  margin: 0 auto;
+}
+
 img[alt~="small"]{
   height: 450px;
   left: 50%;
