@@ -498,3 +498,159 @@ print(str(False)) # "False"
 
 ---
 
+<!-- _class: title -->
+
+# Input | ورودی گرفتن
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+# ورودی گرفتن تکی
+
+### رشته:
+
+```python
+name = input() # "moeein aali"
+print(name) # "moeein aali"
+```
+
+### عدد صحیح:
+
+```python
+age = int(input()) # "18"
+print(age) # 18
+```
+
+### عدد اعشاری:
+
+```python
+height = float(input()) # "12.3"
+print(height) # 12.3
+```
+
+**نکته مهم: همه ورودی‌های کاربر به صورت `Str` هستند!**
+
+---
+
+# چاپ راهنما
+
+### استفاده از `print`:
+
+```python
+print("please enter your name:")
+
+name = input()
+
+print("Hello",name,end="!\n")
+```
+
+### استفاده از آرگومان `input`:
+
+```python
+name = input("please enter your name:")
+
+print("Hello",name,end="!\n")
+```
+
+---
+
+# Split
+
+**کاربرد: جداسازی یک Str توسط یک Str دیگر بر حسب یک الگوی مشخص**
+
+###### مثال ۱:
+
+```python
+full_name = "moeein aali"
+first_name, last_name = full_name.split(" ")
+```
+
+###### مثال ۲:
+
+```python
+names = "moeein amirhossein saeed"
+name1 , name2 , name3 = names.split(" ")
+```
+
+###### مثال ۳:
+
+```python
+names = "moeein amirhossein saeed"
+name1 , name2 , name3 = names.split()
+```
+
+---
+
+# Split
+
+###### مثال ۴:
+
+```python
+names = "moeein|amirhossein|saeed"
+name1 , name2 , name3 = names.split("|")
+```
+
+###### مثال ۵:
+
+```python
+names = "moeein|amirhossein|saeed"
+seperator = "|"
+name1 , name2 , name3 = names.split(seperator)
+```
+
+---
+
+# Split: جدا کردن به تعداد محدود
+
+#### نمونه:
+```python
+txt = "apple#banana#cherry#orange"
+
+a , b = txt.split("#", 1) # apple , banana#cherry#orange
+
+m , n , p = txt.split("#", 2) # apple , banana , cherry#orange
+```
+
+---
+
+# ورودی گرفتن چندتایی
+
+
+### رشته:
+
+```python
+name1 , name = input().split()
+```
+
+### عدد صحیح:
+
+```python
+num1 , num2 = int(input().split()) # Error!
+```
+
+---
+
+# Map
+
+![center](map_function.png)
+
+---
+
+# Map
+
+
+
+```python
+num1 , num2 = map(int , input().split())
+
+num3 , num4 = map(float , input().split())
+```
+
+نکات مهم:
+
+- اگه ورودی‌ها عدد نباشن کد خطا میده!
+- اگه به جای چند تا متغیر، یدونه متغیر قرار بدیم،‌همه ورودی‌ها در قالب یک **لیست** ذخیره می‌شن. در فصل‌های بعد با لیست و کاربردهای اون آشنا می‌شیم...
