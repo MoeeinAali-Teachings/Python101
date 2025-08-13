@@ -1,6 +1,3 @@
-txt = "apple#banana#cherry#orange"
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 
-# setting the maxsplit parameter to 1, will return a list with 2 elements!
-x = txt.split("#", 2)
-
-print(x)
+print(thislist[2:5]) # ["cherry", "orange", "kiwi"]

@@ -747,7 +747,102 @@ print(5 in good_numbers) # False
 ![center2](Bitwise-Operators-in-Python.webp)
 
 ---
+<!-- _class: title -->
 
+# Conditions | شرط‌ها
+
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+# If statements
+
+![center](python_if_elif_else_statement_flow_chart.png)
+
+---
+
+# if + else
+
+![center](python-if-else.png)
+
+---
+
+# if + Elif + Else
+
+![center](python-elif.png)
+
+---
+
+# nested if
+
+![center](python-nested-if.png)
+
+
+---
+
+# Match Statement
+
+- به جای نوشتن تعداد زیادی `if` و `elif` می‌تونی از این سختار استفاده کنی!
+
+```python
+day = 4
+match day:
+  case 1:
+    print("Monday")
+  case 2:
+    print("Tuesday")
+  case 3:
+    print("Wednesday")
+  case 4:
+    print("Thursday")
+  case 5:
+    print("Friday")
+  case 6:
+    print("Saturday")
+  case 7:
+    print("Sunday")
+```
+---
+
+# Default Value in Match Statement
+
+### مقدار پیش‌فرض
+
+- با استفاده از `_` می‌توانید حالتی را در نظر بگیرید که هیچ کدام از `case` ها با مقدار متغیر `match` نمی‌شوند!
+
+```python
+day = 4
+match day:
+  case 6:
+    print("Today is Saturday")
+  case 7:
+    print("Today is Sunday")
+  case _:
+    print("Looking forward to the Weekend")
+```
+
+---
+
+# Combine Values in Match Statement
+
+### ترکیب مقادیر
+
+- از کاراکتر پایپ `|` به عنوان عملگر `or` در ارزیابی `case` برای بررسی تطابق بیش از یک مقدار در یک `case` استفاده کنید:
+
+```python
+day = 4
+match day:
+  case 1 | 2 | 3 | 4 | 5:
+    print("Today is a weekday")
+  case 6 | 7:
+    print("I love weekends!")
+```
+
+---
 
 <!-- _class: title -->
 
@@ -1076,3 +1171,14 @@ print(mylist)
 
 - `reversed()`
   - برعکس‌شده‌ی یک لیست را برمی‌گرداند.
+
+---
+
+<!-- _class: title -->
+
+# Loops | حلقه‌ها
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
