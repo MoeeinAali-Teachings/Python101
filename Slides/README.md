@@ -759,7 +759,20 @@ print(5 in good_numbers) # False
 
 ---
 
-# If statements
+# if 
+
+![center](python_if_statement_flow_chart.png)
+
+---
+
+# if + else
+
+![center](python_if_else_statement_flow_chart.png)
+
+
+---
+
+# if + elif + else
 
 ![center](python_if_elif_else_statement_flow_chart.png)
 
@@ -771,9 +784,15 @@ print(5 in good_numbers) # False
 
 ---
 
-# if + Elif + Else
+# if + elif + else
 
 ![center](python-elif.png)
+
+---
+
+# nested if
+
+![center](python_nested_if_else_statements_flow_chart.png)
 
 ---
 
@@ -1182,3 +1201,83 @@ print(mylist)
 **مدرس: [معین آعلی](https://github.com/moeeinaali)**
 
 **تابستان ۱۴۰۴**
+
+
+---
+
+# For Loop
+
+![center](python_for_loop_flow_chart.png)
+
+---
+
+# While Loop
+
+![center](python_while_loop_flow_chart-1.png)
+
+---
+
+# While
+
+سینتکس:
+
+```
+while <bool>:
+  your codes...
+```
+
+- این حلقه تا وقتی که شرط جلوی آن `true` است اجرا می‌شود!
+
+```python
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+```
+
+**نکته: اگه مقدار `i` رو زیاد نکنید، برنامه تا ابد داخل یک حلقه‌ی بی‌نهایت گیر خواهد کرد!**
+
+---
+
+# break Statement
+
+![center](python_break_statement_flow_chart.png)
+
+---
+
+# break Statement
+
+- با استفاده از `break` می‌توانیم حتی اگر شرط جلوی حلقه همچنان `true` است، عملکرد حلقه را متوقف کنیم. 
+- دقت کنید که هر جایی از کد `break` اجرا شود، دیگر کدهای داخل حلقه اجرا نمی‌شوند و همان لحظه از حلقه خارج خواهیم شد!
+##### مثال:
+
+```python
+i = 1
+while i < 6:
+  print(i)
+  if i == 3:
+    break
+  i += 1 
+```
+
+---
+
+# continue Statement
+
+![center](python_continue_statement_flow_chart.png)
+
+---
+
+# continue Statement
+
+- می‌توانیم با استفاده از دستور `continue` ادامه‌ی اجرای دور فعلی را متوقف کنیم و به دور بعدی برویم!
+
+
+```python
+i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+  print(i)
+```
