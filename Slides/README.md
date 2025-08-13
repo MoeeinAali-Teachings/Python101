@@ -748,3 +748,331 @@ print(5 in good_numbers) # False
 
 ---
 
+
+<!-- _class: title -->
+
+# Lists | لیست‌ها
+
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+# Lists
+
+#### کاربرد:
+- ذخیره‌ی تعدادی داده، داخل یک متغیر
+
+```python
+items = ["apple", "banana", "cherry"]
+print(items)
+
+items2 = ["moeein", 1, True, -1.1]
+print(items2)
+```
+
+#### خصوصیات:
+
+- ترتیب ثابت
+- آیتم‌های قابل تغییر
+- امکان وجود آیتم تکراری
+- امکان وجود آیتم‌ها با تایپ‌های مختلف
+
+---
+
+# Lists
+
+![center2](image-2.png)
+
+---
+
+# List Length
+
+- به دست آوردن تعداد عضوهای یک لیست
+- به دست آوردن طول یک لیست
+
+```python
+thislist = ["apple", "banana", "apple"]
+
+print(len(thislist)) # 3
+```
+
+--- 
+
+# Access List Items
+
+- دسترسی به عضو `n`ام از یک لیست
+
+**نکته: شروع `index`ها از 0 است.**
+
+```python
+thislist = ["apple", "banana", "cherry"]
+
+print(thislist[0]) # banana
+print(thislist[1]) # apple
+print(thislist[2]) # cherry
+```
+---
+
+# Negative Indexing
+#### ایندکس منفی
+
+- شروع از انتها
+  - ایندکس `1-` یعنی عضو آخر لیست
+  - ایندکس `2-` یعنی عضو یکی مانده به آخر لیست
+  - ...
+
+```python
+thislist = ["apple", "banana", "cherry"]
+
+print(thislist[-1]) # cherry
+```
+
+---
+
+
+# Range of Indexes
+
+- `list[start:end]`
+
+```python
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+print(thislist[2:5]) # ["cherry", "orange", "kiwi", "melon"]
+```
+
+- `list[start:end:index]`
+
+```python
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+
+print(thislist[2:5]) # ["cherry", "orange", "kiwi", "melon"]
+```
+
+---
+
+
+# Change Item Value
+
+- برای تغییر دادن یک آیتم‌ خاص از لیست، کافیه که مثل متغیرها به اون آیتم مقدار جدید `assign` کنیم.
+
+```python
+thislist = ["apple", "banana", "cherry"]
+
+thislist[1] = "blackcurrant"
+
+print(thislist)
+```
+
+
+---
+
+# Change a Range of Item Values
+
+- برای تغییر دادن یک رنج از لیست، نیازه که یک لیست جدید با طول برابر با رنج مورد نظر با مقادیر جدید ایجاد کنیم. سپس آن رنج را در لیست مد نظر `assign` کنیم.
+
+<br/>
+
+```python
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+
+thislist[1:3] = ["blackcurrant", "watermelon"]
+
+print(thislist)
+```
+
+- **دقت کنید که طول رنج انتخاب شده با طول لیست جدید یکی باشد!**
+
+
+---
+
+# Append Items
+
+- این متد، مقدار جدید را به انتهای لیست اضافه می‌کند.
+
+```python
+thislist = ["apple", "banana", "cherry"]
+
+thislist.append("orange")
+
+print(thislist) # ['apple', 'banana', 'cherry', 'orange']
+```
+
+---
+
+# Insert Items
+
+- این متد، مقدار جدید را دقیقا در ایندکس مورد نظر قرار می‌دهد و باقی اعضای لیست را شیفت می‌دهد.
+
+
+```python
+thislist = ["apple", "banana", "cherry"]
+
+thislist.insert(2, "watermelon")
+
+print(thislist) # ['apple', 'banana', 'watermelon', 'cherry']
+```
+
+---
+
+# Extend List
+
+- این متد یک لیست دیگر را به انتهای لیست فعلی اضافه می‌کند. عملکرد مشابه به `append` دارد با این تفاوت که ورودی آن به یک مقدار، لیستی از مقادیر است.
+
+
+```python
+list1 = ["apple", "banana", "cherry"]
+
+list2 = ["mango", "pineapple", "papaya"]
+
+list1.extend(list2)
+
+print(list1) # ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+```
+
+---
+
+# Extend List
+
+- روش دوم:
+
+```python
+list1 = ["apple", "banana", "cherry"]
+
+list2 = ["mango", "pineapple", "papaya"]
+
+list3 = list1 + list2
+
+print(list3) # ['apple', 'banana', 'cherry', 'mango', 'pineapple', 'papaya']
+```
+
+---
+
+# Remove Specified Item
+
+- برای این کار از متد `remove` استفاده می‌کنیم.
+
+```python
+thislist = ["apple", "banana", "cherry"]
+
+thislist.remove("banana")
+
+print(thislist)
+```
+
+- اگر بیشتر از یک مقدار وجود داشته باشد که با ورودی `remove`‌ یکی باشد، این متد فقط اولین عضو را عضو می‌کند.
+
+```python
+thislist = ["apple", "banana", "cherry", "banana", "kiwi"]
+
+thislist.remove("banana")
+
+print(thislist)
+```
+
+---
+
+# Remove Specified Index
+
+- برای این کار از متد `pop` استفاده می‌کنیم.
+- این متد مقدار عضو شده را `return` هم می‌کند.
+
+```python
+thislist = ["apple", "banana", "cherry"]
+a = thislist.pop(1)
+
+print(thislist) # ["apple", "cherry"]
+print(a) # banana
+```
+
+- اگر به این متد ورودی ندیم، آخرین عضو لیست را حذف می‌کند.
+
+```python
+thislist = ["apple", "banana", "cherry"]
+a = thislist.pop()
+
+print(a) # cherry
+print(thislist) # ["apple", "banana"]
+```
+
+---
+
+# Clear the List
+
+- متد `clear` تمامی عضوهای لیست را عضو می‌کند.
+
+```python
+thislist = ["apple", "banana", "cherry"]
+
+thislist.clear()
+
+print(thislist) # []
+```
+
+
+---
+
+# Sort Lists
+
+- مرتب‌سازی برحسب حروف و اعداد (صعودی):
+
+```python
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+
+thislist.sort()
+
+print(thislist) # ['banana', 'kiwi', 'mango', 'orange', 'pineapple']
+```
+
+- برعکس(نزولی):
+```python
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+
+thislist.sort(reverse = True)
+
+print(thislist) # ['pineapple', 'orange', 'mango', 'kiwi', 'banana']
+```
+
+---
+
+# Copy Lists
+
+```python
+thislist = ["apple", "banana", "cherry"]
+```
+
+- روش اول:
+
+```python
+mylist = thislist.copy()
+print(mylist)
+```
+- روش دوم:
+```python
+mylist = list(thislist)
+print(mylist)
+```
+
+- روش سوم:
+```python
+mylist = thislist[:]
+print(mylist)
+```
+---
+
+# another methods
+
+- `count`
+  - تعداد آیتم‌هایی که برابر با مقدار ورودی باشن.
+
+- `index`
+  - ایندکس اولین آیتمی که برابر باشه با مقدار ورودی
+
+- `reverse`
+  - لیست را برعکس می‌کند و روی همان ذخیره می‌کند
+
+- `reversed()`
+  - برعکس‌شده‌ی یک لیست را برمی‌گرداند.
