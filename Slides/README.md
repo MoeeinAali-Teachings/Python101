@@ -832,7 +832,227 @@ print(5 in good_numbers) # False
 
 ![center2](Bitwise-Operators-in-Python.webp)
 
+
+
 ---
+
+<!-- _class: title -->
+
+# Math Library | کتابخانه ریاضی
+
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+
+---
+
+# توابع آماده ریاضیاتی پایتون
+
+- تابع `min‌` و `max`
+
+```python
+x = min(5, 10, 25)
+y = max(5, 10, 25)
+
+print(x) # 5
+print(y) # 25
+```
+
+- تابع قدرمطلق (`abs`)
+
+```python
+x = abs(-7.25)
+y = abs(0)
+z = abs(2)
+
+print(x) # 7.25
+print(y) # 0
+print(z) # 2
+```
+
+---
+
+# توابع آماده ریاضیاتی پایتون
+
+- تابع توان (`pow`)
+
+```python
+x = pow(4, 3)
+
+print(x) # 4 * 4 * 4 = 64
+```
+
+---
+
+# Import Library
+
+- کل کتابخانه:
+
+```python
+import math
+```
+
+- تعدادی از توابع:
+
+```python
+from math import sqrt
+from math import sin, tan
+```
+
+---
+
+# sqrt
+
+
+![center](shutterstock_1913235190-1024x1024.webp)
+
+---
+
+# sqrt
+
+```python
+import math
+
+x = math.sqrt(64)
+
+print(x) # 8
+```
+---
+
+# ceil and floor
+
+![center2](image-5.png)
+
+---
+
+# ceil and floor
+
+- براکت: floor
+- سقف: ceil
+
+```python
+import math
+
+x = math.ceil(1.0001)
+y = math.floor(1.99999)
+
+print(x) # 2
+print(y) # 1 
+```
+
+
+---
+
+# ثابت‌های ریاضی 
+
+- **عدد پی (π)**: `math.pi`
+- **عدد نپر (e)**: `math.e`
+- **بی‌نهایت**: `math.inf`
+- **منفی بی‌نهایت**: `-math.inf`
+
+```python
+import math
+
+print(f"عدد پی: {math.pi}") # 3.141592653589793
+print(f"عدد نپر: {math.e}") # 2.718281828459045
+print(f"بی‌نهایت: {math.inf}") # inf
+```
+
+---
+
+# توابع مثلثاتی
+
+- **سینوس**: `math.sin(x)`
+- **کسینوس**: `math.cos(x)`
+- **تانژانت**: `math.tan(x)`
+
+```python
+import math
+
+angle_degrees = 30
+angle_radians = math.radians(angle_degrees)
+
+sin_value = math.sin(angle_radians)
+cos_value = math.cos(angle_radians)
+tan_value = math.tan(angle_radians)
+```
+
+---
+
+# تبدیل زاویه
+
+- **درجه به رادیان**: `math.radians(degrees)`
+- **رادیان به درجه**: `math.degrees(radians)`
+
+```python
+import math
+
+degrees = 180
+radians = math.radians(degrees)
+
+radians = math.pi
+degrees = math.degrees(radians)
+```
+
+---
+
+# توابع لگاریتمی 
+
+- **لگاریتم طبیعی**: `math.log(x)`
+- **لگاریتم بر پایه ۱۰**: `math.log10(x)`
+- **لگاریتم بر پایه ۲**: `math.log2(x)`
+
+```python
+import math
+
+x = 100
+y = 8
+
+ln_x = math.log(x)      
+log10_x = math.log10(x) 
+log2_y = math.log2(y)   
+```
+
+---
+
+# توابع گرد کردن 
+
+- **گرد کردن**: `math.round(x)` - گرد کردن به نزدیک‌ترین عدد صحیح
+- **گرد کردن به بالا**: `math.ceil(x)` - گرد کردن به عدد صحیح بزرگتر
+- **گرد کردن به پایین**: `math.floor(x)` - گرد کردن به عدد صحیح کوچکتر
+
+```python
+import math
+
+x = 3.7
+y = 3.2
+z = -3.7
+
+print(round(x))
+print(round(y))
+print(math.ceil(x))
+print(math.floor(x))
+print(math.floor(z)) 
+```
+
+---
+
+# تابع فاکتوریل 
+
+```python
+import math
+
+n = 5
+
+factorial_n = math.factorial(n) 
+# n! = 1 * 2 * ... * (n-1) * n
+```
+
+---
+
 <!-- _class: title -->
 
 # Conditions | شرط‌ها
