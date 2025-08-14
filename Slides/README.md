@@ -235,9 +235,11 @@ print(flag, False)
 
 # کلیدهای خاص
 
-## n\ : زدن یک enter (رفتن به خط بعد)
-## t\ : زدن یک tab
-
+- #### n\ : زدن یک enter (رفتن به خط بعد)
+- #### t\ : زدن یک tab
+- #### '\ : یک عدد کوتیشن
+- #### "\ : یک عدد دبل‌کوتیشن
+- #### \\\ : یک عدد بک‌اسلش
 
 #### مثال:
 
@@ -954,16 +956,21 @@ print(thislist[-1]) # cherry
 
 ```python
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
-
-print(thislist[2:5]) # ["cherry", "orange", "kiwi", "melon"]
+print(thislist[2:5]) # ["cherry", "orange", "kiwi"]
 ```
 
 - `list[start:end:index]`
 
 ```python
 thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[2:5]) # ["cherry", "orange", "kiwi"]
+```
 
-print(thislist[2:5]) # ["cherry", "orange", "kiwi", "melon"]
+- `list[start:]`
+
+```python
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(thislist[2:]) # ["cherry", "orange", "kiwi", "melon", "mango"]
 ```
 
 ---
@@ -1205,19 +1212,19 @@ print(mylist)
 
 ---
 
-# For Loop
+# for loop
 
 ![center](python_for_loop_flow_chart.png)
 
 ---
 
-# While Loop
+# while loop
 
 ![center](python_while_loop_flow_chart-1.png)
 
 ---
 
-# While
+# while
 
 سینتکس:
 
@@ -1280,4 +1287,675 @@ while i < 6:
   if i == 3:
     continue
   print(i)
+```
+
+---
+
+# for
+
+- این نوع از حلقه، برای پیمایش بر روی یک توالی (رشته، لیست، بازه‌ای از اعداد و...) استفاده می‌شود.
+
+#### پیمایش روی یک لیست:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+for x in fruits:
+  print(x)
+```
+
+#### پیمایش روی یک رشته:
+
+```python
+for x in "banana":
+  print(x)
+```
+
+---
+
+# break and continue
+
+#### break:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    break
+  print(x)
+```
+
+
+
+#### continue:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    continue
+  print(x)
+```
+
+---
+
+# range function
+
+- تابع `range` یک توالی از اعداد صحیح را برمی‌گرداند.
+
+```python
+for x in range(6):
+  print(x) # 0,1,2,3,4,5
+```
+
+- range from to
+
+```python
+for x in range(2, 6): 
+  print(x) # 2,3,4,5
+```
+
+- range from to with step
+
+```python
+for x in range(2, 30, 3):
+  print(x) # 2,5,8,11,14,17,20,23,26,29
+```
+
+---
+
+# nested loop
+
+#### مثال: جدول ضرب ۱۰ در ۱۰
+
+```python
+for i in range(1,11):
+    for j in range(1,11):
+        print(i,"*",j,"=",i*j)
+```
+
+---
+<!-- _class: title -->
+
+# Strings | رشته‌ها
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+
+# Multiline Strings
+
+#### مثال ۱:
+
+```python
+a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+
+print(a)
+```
+#### مثال ۲:
+
+```python
+a = '''Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua.'''
+
+print(a) 
+```
+---
+
+# Strings as Lists
+
+#### دسترسی به ایندکس `n` ام:
+
+```python
+a = "Hello, World!"
+print(a[1])
+```
+
+#### پیمایش روی لیست‌ها:
+
+```python
+for i in "moeein":
+  print(i)
+```
+
+#### طول یک رشته:
+
+```python
+a = "moeein"
+print(len(a)) # 6
+```
+
+---
+
+# Membership in Strings
+
+```python
+txt = "The best things in life are free!"
+
+print("free" in txt) # True
+print("moeein" in txt) # False
+```
+
+```python
+txt = "The best things in life are free!"
+
+if "free" in txt:
+  print("Yes")
+```
+
+```python
+txt = "The best things in life are free!"
+
+if "expensive" not in txt:
+  print("No")
+```
+
+---
+
+# Slicing Strings
+
+- slice from to
+
+```python
+b = "Hello, World!"
+print(b[2:5]) # llo 
+```
+
+- slice from start
+```python
+b = "Hello, World!"
+print(b[:5]) # Hello
+```
+- slice to end
+```python
+b = "Hello, World!"
+print(b[2:]) # llo, World!
+```
+
+---
+
+# String Concatenation
+
+- می‌تونیم از عملگر `+` برای `concat` کردن رشته‌ها استفاده کنیم:
+
+```python
+a = "Hello"
+b = "World"
+
+c = a + " " + b
+
+print(c) # Hello World
+```
+
+---
+
+# F-Strings
+
+####  روش نادرست:
+
+```python
+age = 22
+print("My name is Moeein, I am " + age) # Error!
+```
+
+####  روش درست:
+```python
+age = 22
+txt = f"My name is Moeein, I am {age}"
+print(txt)
+
+price = 59.999999
+txt = f"The price is {price:.2f} dollars"
+print(txt)
+
+txt = f"The price is {20 * 59} dollars"
+print(txt)
+```
+
+---
+
+
+# Modify Strings
+
+- upper: همگی حروف بزرگ
+```python
+a = "Hello, World!"
+print(a.upper()) # HELLO, WORLD!
+```
+
+- lower: همگی حروف کوچک
+```python
+a = "Hello, World!"
+print(a.lower()) # hello, world!
+```
+
+- strip: حذف کردن اسپیس‌ از اول و اخر
+```python
+a = " Hello, World!  "
+print(a.strip()) # Hello, World!
+```
+
+---
+
+# Modify Strings
+
+- replace: جایگزین کردن در سرتاسر رشته
+```python
+a = "moeein aali"
+a.replace("moeein", "mohammad")
+print(a)
+```
+
+- split: جداکننده
+```python
+a = "moeein-saeed-amirhossein"
+print(a.split("-")) # ['moeein','saeed','amirhossein']
+```
+
+- capitalize: فقط کارکتر اول را بزرگ می‌کند
+```python
+a = "hello world!"
+print(a.capitalize()) # Hello world!
+```
+---
+
+# Modify Strings
+
+- count(input): شمردن تعداد input ها در سرتاسر رشته 
+```python
+a = "moeein1 moeein2 moeein wfqefqew"
+print(a.count("moeein")) # 3
+```
+
+- endswith(input): اگر رشته با input تمام شود، مقدار `True` را برمی‌گرداند
+```python
+a = "moeein1 moeein2 moeein finish"
+print(a.endswith("finish")) # True
+```
+
+- find(input): به دنبال input در رشته می‌گردد و index آن را برمی‌گرداند
+```python
+a = "moeein1 moeein2 moeein finish"
+print(a.find("moeein2")) # 8
+```
+
+---
+
+# Modify Strings
+
+- startswith(input): اگر رشته با input شروع شود، مقدار `True` را برمی‌گرداند
+```python
+a = "hello world, how are you?"
+print(a.startswith("hello")) # True
+```
+
+- isalpha: اگر رشته فقط شامل حروف باشد، مقدار `True` را برمی‌گرداند
+```python
+b = "Hello123"
+print(b.isalpha()) # False
+```
+
+- isdigit: اگر رشته فقط شامل اعداد باشد، مقدار `True` را برمی‌گرداند
+```python
+b = "123abc"
+print(b.isdigit()) # False
+```
+
+---
+
+# Modify Strings
+
+- title: اولین حرف هر کلمه را بزرگ می‌کند
+```python
+a = "hello world python"
+print(a.title()) # Hello World Python
+```
+
+- swapcase: حروف بزرگ را کوچک و حروف کوچک را بزرگ می‌کند
+```python
+a = "Hello World"
+print(a.swapcase()) # hELLO wORLD
+```
+
+- isspace: اگر رشته فقط شامل فاصله باشد، مقدار `True` را برمی‌گرداند
+```python
+a = "   "
+print(a.isspace()) # True
+b = "hello world"
+print(b.isspace()) # False
+```
+
+---
+
+# Modify Strings
+
+- isalnum(): اگر رشته شامل حروف و اعداد باشد، مقدار `True` را برمی‌گرداند
+```python
+a = "Hello123"
+print(a.isalnum()) # True
+b = "Hello World"
+print(b.isalnum()) # False
+```
+
+- lstrip(): حذف کردن اسپیس از سمت چپ رشته
+```python
+a = "   Hello World"
+print(a.lstrip()) # Hello World
+```
+
+- rstrip(): حذف کردن اسپیس از سمت راست رشته
+```python
+a = "Hello World   "
+print(a.rstrip()) # Hello World
+```
+
+---
+
+# Modify Strings
+
+- rfind(input): به دنبال input در رشته می‌گردد و آخرین index آن را برمی‌گرداند
+```python
+a = "hello world hello python"
+print(a.rfind("hello")) # 12
+```
+
+- index(input): مشابه find اما اگر input پیدا نشود، خطا می‌دهد
+```python
+a = "hello world"
+print(a.index("world")) # 6
+```
+
+- join(iterable): رشته‌ها را با separator مشخص شده به هم متصل می‌کند
+```python
+words = ["hello", "world", "python"]
+result = "-".join(words)
+print(result) # hello-world-python
+```
+
+---
+
+<!-- _class: title -->
+
+# Dictionaries | دیکشنری‌ها
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+# Dictionary
+
+از دیکشنری‌ها برای ذخیره مقادیر داده در جفت‌های `key:value` استفاده می‌شود.
+
+```python
+testdict = {
+  "name": "moeein",
+  "age": 22,
+  "family": "aali",
+  "married": False,
+  "friends": ["saeed", "amirhossein"]
+}
+print(testdict["name"]) # moeein
+print(testdict["age"]) # 22
+print(testdict["family"]) # aali
+print(testdict["married"]) # False
+```
+
+- در دیکشنری‌ها ترتیب ثابت است.
+- در دیکشنری‌ها مقادیر قابل تغییر هستند.
+- در دیکشنری‌ها کلید تکراری مجاز نیست!
+
+---
+
+# Dictionary Length
+
+- تابع `len` برای دیکشنری‌ها تعداد کلیدها را برمی‌گرداند:
+
+
+```python
+testdict = {
+  "name": "moeein",
+  "age": 22,
+  "family": "aali",
+  "married": False
+}
+
+print(len(testdict))  # 4
+```
+
+---
+
+# Accessing Items
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+```
+
+#### روش اول:
+
+```python
+x = thisdict["model"]
+```
+
+#### روش دوم:
+
+```python
+x = thisdict.get("model")
+```
+
+---
+
+# Get Keys and Values
+
+```python
+testdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+```
+
+- #### Get Keys:
+
+```python
+mykeys = testdict.keys()
+
+print(mykeys) # dict_keys(['brand', 'model', 'year'])
+```
+
+- #### Get Values:
+
+```python
+x = car.values() 
+
+print(x) # dict_values(['Ford', 'Mustang', 1964])
+```
+
+---
+
+# Change & Add Items
+
+- #### Change Values
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict["year"] = 2018
+```
+
+- #### Update Dictionary
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+thisdict.update({"year": 2020, "brand": "bmw"}) 
+```
+
+---
+
+# Remove Items 
+
+- pop(input): این متد کلید input را حذف می‌کند.
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang"
+}
+thisdict.pop("model")
+print(thisdict) 
+```
+
+- clear: این متد تمامی کلید‌ها را پاک می‌کند
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang"
+}
+thisdict.clear()
+print(thisdict) 
+```
+
+---
+
+# Loop Dictionaries
+
+#### loop on keys:
+- روش اول:
+```python
+for x in thisdict:
+  print(x) 
+```
+- روش دوم:
+```python
+for x in thisdict.keys():
+  print(x) 
+```
+---
+
+# Loop Dictionaries
+
+#### loop on values:
+- روش اول:
+```python
+for x in thisdict:
+  print(thisdict[x]) 
+```
+- روش دوم:
+```python
+for x in thisdict.values():
+  print(x) 
+```
+
+---
+
+# Loop Dictionaries
+
+#### loop on keys and values:
+
+```python
+for x, y in thisdict.items():
+  print(x, y) 
+```
+
+- در ادامه با خروجی متد `items` که از نوع `tupple` است، آشنا خواهیم شد...
+
+
+---
+
+# Copy Dictionaries
+
+روش اول: استفاده از متد `copy`
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = thisdict.copy()
+```
+
+روش دوم: استفاده از `dict`
+
+```python
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+mydict = dict(thisdict)
+```
+
+---
+
+# Nested Dictionaries
+
+```python
+myfamily = {
+  "child1" : {
+    "name" : "Emil",
+    "year" : 2004
+  },
+  "child2" : {
+    "name" : "Tobias",
+    "year" : 2007
+  },
+  "child3" : {
+    "name" : "Linus",
+    "year" : 2011
+  }
+} 
+```
+
+##### Access Items:
+
+```python
+print(myfamily["child2"]["name"])
+```
+
+---
+
+# Dictionary Methods
+
+- fromkeys(keys,values): یک دیکشنری جدید با استفاده از کلیدها و مقادیر داده شده می‌سازد:
+
+```python
+dict3 = dict.fromkeys(dict1.keys(), dict2.values())
+```
+
+- setdefault(key,defaultValue): اگر کلید داده شده در دیکشنری وجود داشته باشد، مقدار آن را برمی‌گرداند. در غیر این صورت مقدار دیفالت داده شده را برای آن ثبت می‌کند.
+
+```python
+car = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+x = car.setdefault("color", "white")
+
+print(x) # white
 ```
