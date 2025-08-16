@@ -890,6 +890,14 @@ x = pow(4, 3)
 print(x) # 4 * 4 * 4 = 64
 ```
 
+- تابع رند کردن (`round`)
+
+```python
+print(round(1.2)) # 1
+print(round(1.9)) # 2
+print(round(-1.9)) # -2
+```
+
 ---
 
 # Import Library
@@ -1025,7 +1033,7 @@ log2_y = math.log2(y)
 
 # توابع گرد کردن 
 
-- **گرد کردن**: `math.round(x)` - گرد کردن به نزدیک‌ترین عدد صحیح
+- **گرد کردن**: `round(x)` - گرد کردن به نزدیک‌ترین عدد صحیح
 - **گرد کردن به بالا**: `math.ceil(x)` - گرد کردن به عدد صحیح بزرگتر
 - **گرد کردن به پایین**: `math.floor(x)` - گرد کردن به عدد صحیح کوچکتر
 
@@ -1036,7 +1044,7 @@ x = 3.7
 y = 3.2
 z = -3.7
 
-print(round(x))
+print(round(x)) 
 print(round(y))
 print(math.ceil(x))
 print(math.floor(x))
