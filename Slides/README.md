@@ -2276,3 +2276,495 @@ x = car.setdefault("color", "white")
 
 print(x) # white
 ```
+---
+
+<!-- _class: title -->
+
+# Functions | توابع
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+# تابع چیست؟
+
+![center2](function_machine.png)
+
+---
+
+# ساخت تابع
+
+```python
+def my_function():
+  print("Hello from a function") 
+```
+
+---
+
+# صدا زدن یک تابع
+
+```python
+def my_function():
+  print("Hello from a function")
+
+my_function()
+``` 
+
+---
+
+# آرگومان‌های یک تابع
+
+- یک تابع با ۱ ورودی:
+
+```python
+def my_function(fname):
+  print("Hello " + fname)
+
+my_function("Moeein") 
+my_function("Saeed") 
+my_function("Amirhossein") 
+```
+
+- یک تابع با ۲ ورودی:
+
+```python
+def my_function(fname , lname):
+  print("Hello " + fname + lname)
+
+my_function("Moeein","aali") 
+```
+
+---
+
+# آرگومان‌های یک تابع
+
+```python
+def my_function(child3, child2, child1):
+  print("The youngest child is " + child3)
+
+my_function(child1 = "Emil", child2 = "Tobias", child3 = "Linus") 
+```
+
+
+---
+
+# args*
+
+```python
+def my_function(*args):
+  print("arg2 is:" + args[1])
+
+my_function("moeein", "amirhossein", "saeed") 
+```
+
+---
+
+# kwargs**
+
+```python
+def my_function(**kwargs):
+  print("His last name is " + kwargs["lname"])
+
+my_function(fname = "Tobias", lname = "Refsnes") 
+```
+
+---
+
+# مقدار پیش‌فرض
+
+```python
+def my_function(country = "Norway"):
+  print("I am from " + country)
+
+my_function("Sweden")
+my_function("India")
+my_function()
+my_function("Brazil") 
+```
+
+---
+
+# مقدار بازگشتی
+
+- یک تابع می‌تواند مقدار یا مقادیری را برگرداند.
+
+```python
+def my_function(x):
+  return 5 * x
+
+print(my_function(3))
+print(my_function(5))
+print(my_function(9)) 
+```
+
+---
+
+# توابع بازگشتی
+
+```python
+def fibonacci(n):
+    if n<= 0:
+        print("Incorrect input")
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+print(fibonacci(10))
+```
+
+---
+
+
+<!-- _class: title -->
+
+# Tuples | تاپل‌ها
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+
+---
+
+# تاپل چیست؟
+
+```python
+mytuple = ("apple", "banana", "cherry") 
+```
+
+### ویژگی‌ها:
+
+- دارای ترتیب مشخص
+- غیر قابل تغییر!
+- می‌تواند عضو تکراری داشته باشد
+- نوع داده‌های مختلف
+
+---
+
+# طول تاپل
+
+```python
+thistuple = ("apple", "banana", "cherry")
+print(len(thistuple))
+```
+
+---
+
+# ساخت تاپل با یک عضو
+
+```python
+# NOT a tuple
+thistuple = ("apple")
+print(type(thistuple)) 
+
+thistuple = ("apple",)
+print(type(thistuple))
+```
+
+---
+
+# دسترسی به یک عضو تاپل
+
+```python
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[1])
+```
+
+- همانند لیست‌ها، تاپل هم از ایندکس منفی پشتیبانی می‌کند!
+
+```python
+thistuple = ("apple", "banana", "cherry")
+print(thistuple[-1])
+```
+- همانند لیست‌ها، تاپل هم از رنج ایندکس پشتیبانی می‌کند!
+
+```python
+thistuple = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(thistuple[2:5])
+```
+
+---
+
+# Unpacking a Tuple
+
+```python
+fruits = ("apple", "banana", "cherry")
+
+(green, yellow, red) = fruits
+
+print(green)
+print(yellow)
+print(red)
+```
+
+### استفاده از * :
+
+```python
+fruits = ("apple", "banana", "cherry", "strawberry", "raspberry")
+
+(green, yellow, *red) = fruits
+
+print(green)
+print(yellow)
+print(red)
+```
+
+---
+
+# Join Tuples
+
+### با استفاده از `+`
+
+```python
+tuple1 = ("a", "b" , "c")
+tuple2 = (1, 2, 3)
+
+tuple3 = tuple1 + tuple2
+print(tuple3) 
+```
+
+### با استفاده از `*`
+
+```python
+fruits = ("apple", "banana", "cherry")
+mytuple = fruits * 2
+
+print(mytuple) 
+```
+
+---
+
+
+
+<!-- _class: title -->
+
+# Try Except
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+# Try Except
+
+
+- `try` :  به شما اجازه می‌دهد کدی را اجرا کنید که خطا دارد!
+- `except` : به شما اجازه‌ می‌دهد خطای داخل try را هندل کند.
+- `else` : اجازه می‌دهد یک کد در صورتی اجرا شود که خطایی رخ نداده است!‍
+
+```python
+try:
+  print("Hello")
+except:
+  print("Something went wrong")
+else:
+  print("Nothing went wrong") 
+```
+
+---
+
+# Try Except
+
+```python
+try:
+  print(x)
+except:
+  print("Something went wrong")
+else:
+  print("Nothing went wrong") 
+```
+
+---
+
+# Raise an exception
+
+```python
+x = -1
+
+if x < 0:
+  raise Exception("Sorry, no numbers below zero") 
+```
+
+```python
+x = "hello"
+
+if not type(x) is int:
+  raise TypeError("Only integers are allowed") 
+```
+
+---
+
+<!-- _class: title -->
+
+# Sets | مجموعه‌ها
+<br/>
+
+**مدرس: [معین آعلی](https://github.com/moeeinaali)**
+
+**تابستان ۱۴۰۴**
+
+---
+
+# Set چیست؟
+
+```python
+thisset = {"apple", "banana", "cherry"}
+print(thisset) 
+```
+
+## ویژگی‌ها:
+
+- مرتب نیست!
+- قابل‌تغییر نیست!
+- داده تکراری مجاز نیست!
+
+```python
+thisset = {"apple", "banana", "cherry", "apple"}
+
+print(thisset)
+```
+
+---
+
+# True = 1 , False = 0
+
+### False = 0
+
+```python
+thisset = {"apple", "banana", "cherry", False, True, 0}
+
+print(thisset)
+```
+### True = 1
+
+```python
+thisset = {"apple", "banana", "cherry", True, 1, 2}
+
+print(thisset)
+```
+
+---
+
+# طول یک Set
+
+```python
+thisset = {"apple", "banana", "cherry"}
+
+print(len(thisset)) 
+```
+
+---
+
+# اضافه کردن عضو به Set
+
+- شما نمی‌توانید عضوهای یک set را تغییر دهید، اما می‌توانید به آن عضو اضافه کنید!
+
+```python
+thisset = {"apple", "banana", "cherry"}
+
+thisset.add("orange")
+
+print(thisset) 
+```
+
+---
+
+# اضافه کردن یک Set به یک Set دیگر
+
+```python
+thisset = {"apple", "banana", "cherry"}
+tropical = {"pineapple", "mango", "papaya"}
+
+thisset.update(tropical)
+
+print(thisset) 
+```
+
+- نکته: نیازی نیست لزوما یک set را اضافه کنید!
+
+```python
+thisset = {"apple", "banana", "cherry"}
+mylist = ["kiwi", "orange"]
+
+thisset.update(mylist)
+
+print(thisset) 
+```
+
+---
+
+# حذف یک عضو از Set
+
+```python
+thisset = {"apple", "banana", "cherry"}
+
+thisset.remove("banana")
+
+print(thisset) 
+```
+
+- اگر یک عضو داخل set وجود نداشته باششد، یک ارور raise **می‌شود**.
+
+```python
+thisset = {"apple", "banana", "cherry"}
+
+thisset.discard("banana")
+
+print(thisset) 
+```
+
+- اگر یک عضو داخل set وجود نداشته باششد، یک ارور raise **نمی‌شود**.
+
+
+---
+
+# حذف یک عضو تصادفی
+
+```python
+thisset = {"apple", "banana", "cherry"}
+
+x = thisset.pop()
+
+print(x)
+print(thisset) 
+```
+
+---
+
+# تجمیع چند Set
+
+```python
+set1 = {"a", "b", "c"}
+set2 = {1, 2, 3}
+set3 = {"John", "Elena"}
+set4 = {"apple", "bananas", "cherry"}
+
+myset = set1.union(set2, set3, set4)
+print(myset) 
+```
+
+- تفاوت union و Update ؟
+
+
+---
+
+# Intersection
+
+- این متد فقط اعضای مشترک را نگه می‌دارد
+
+```python
+set1 = {"apple", "banana", "cherry"}
+set2 = {"google", "microsoft", "apple"}
+
+set3 = set1.intersection(set2)
+print(set3) 
+```
