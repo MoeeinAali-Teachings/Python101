@@ -2632,6 +2632,11 @@ thisset = {"apple", "banana", "cherry", "apple"}
 
 print(thisset)
 ```
+---
+
+# Hash Function
+
+![](hash-table.jpeg)
 
 ---
 
