@@ -2013,6 +2013,13 @@ print(result) # hello-world-python
 
 # Dictionary
 
+![center2](Map.png)
+
+
+---
+
+# Dictionary
+
 از دیکشنری‌ها برای ذخیره مقادیر داده در جفت‌های `key:value` استفاده می‌شود.
 
 ```python
